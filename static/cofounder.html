@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder Match India — Find Your Entrepreneurial Partner</title>
+<meta name="description" content="India's first structured platform to find your co-founder. Skill-based matching, city/language filters, and trial project framework for Delhi/NCR founders.">
+<style>
+:root {
+  --bg: #0a0c12;
+  --card: #141820;
+  --border: #1e2433;
+  --text: #e2e6ee;
+  --muted: #7a7f94;
+  --accent: #6c63ff;
+  --accent-hover: #7b73ff;
+  --green: #4ade80;
+  --amber: #fbbf24;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+/* Hero */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  background: linear-gradient(180deg, #0a0c12 0%, #141820 100%);
+  border-bottom: 1px solid var(--border);
+}
+.hero .badge {
+  display: inline-block;
+  background: rgba(108,99,255,0.15);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  border: 1px solid rgba(108,99,255,0.25);
+}
+.hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+.hero h1 span { color: var(--accent); }
+.hero p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+.hero .stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 32px;
+}
+.hero .stat-value { font-size: 28px; font-weight: 700; color: var(--text); }
+.hero .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* Problem Section */
+.problem {
+  padding: 60px 0;
+}
+.problem h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.problem-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.problem-card .icon { font-size: 28px; margin-bottom: 12px; }
+.problem-card h3 { font-size: 16px; margin-bottom: 8px; }
+.problem-card p { font-size: 14px; color: var(--muted); }
+
+/* How It Works */
+.how-it-works {
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+}
+.how-it-works h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.step {
+  text-align: center;
+  padding: 24px;
+}
+.step .number {
+  width: 48px;
+  height: 48px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 auto 16px;
+  color: #fff;
+}
+.step h3 { font-size: 16px; margin-bottom: 8px; }
+.step p { font-size: 14px; color: var(--muted); }
+
+/* Waitlist */
+.waitlist {
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.waitlist h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.waitlist > p {
+  color: var(--muted);
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+.waitlist-form {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.form-group textarea { min-height: 80px; resize: vertical; }
+.form-group select option { background: var(--card); color: var(--text); }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.btn-submit:hover { background: var(--accent-hover); }
+.btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.form-status {
+  margin-top: 16px;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  display: none;
+}
+.form-status.success { display: block; background: rgba(74,222,128,0.1); color: var(--green); border: 1px solid rgba(74,222,128,0.2); }
+.form-status.error { display: block; background: rgba(248,113,113,0.1); color: #f87171; border: 1px solid rgba(248,113,113,0.2); }
+
+/* Footer */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* About section */
+.about {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+.about h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+.about-content p { margin-bottom: 16px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 32px; }
+  .hero .stats { gap: 24px; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; gap: 16px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge">🚀 Beta — Delhi/NCR First</div>
+    <h1>Find Your <span>Co-Founder</span> in India</h1>
+    <p>Stop searching alone. A structured platform for Indian entrepreneurs to find their perfect business partner — by skill, city, industry, and commitment level.</p>
+    <div class="stats">
+      <div>
+        <div class="stat-value">1.4L+</div>
+        <div class="stat-label">DPIIT Startups in India</div>
+      </div>
+      <div>
+        <div class="stat-value">55%</div>
+        <div class="stat-label">Are Solo Founders</div>
+      </div>
+      <div>
+        <div class="stat-value">Delhi/NCR</div>
+        <div class="stat-label">Launch City</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="container">
+    <h2>🇮🇳 The Indian Co-Founder Problem</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">🧑‍💻</div>
+        <h3>Tech Founders Need Business Partners</h3>
+        <p>You built the product. But marketing, sales, operations — not your strength. Where do you find a co-founder who complements you?</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">💼</div>
+        <h3>Non-Tech Founders Need Technical Co-Founders</h3>
+        <p>You have the industry connections and the idea. But you can't build it. Who do you trust with your vision?</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🤝</div>
+        <h3>The Trust Deficit</h3>
+        <p>LinkedIn, Twitter, WhatsApp groups — everyone's looking but nobody's vetted. How do you know who's serious vs just exploring?</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">⚖️</div>
+        <h3>Equity & Commitment Anxiety</h3>
+        <p>How much equity do I give? What if they leave after 3 months? No structured way to "date before marriage" in business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="number">1</div>
+        <h3>Tell Us About You</h3>
+        <p>Your skills, industry, city (Delhi/NCR focus), and what you're looking for. Video intro mandatory — no fake profiles.</p>
+      </div>
+      <div class="step">
+        <div class="number">2</div>
+        <h3>Smart Matching</h3>
+        <p>We match you by complementary skills, not identical ones. Tech founder + business co-founder, by default. City and language preferences applied.</p>
+      </div>
+      <div class="step">
+        <div class="number">3</div>
+        <h3>Trial Project → Commitment</h3>
+        <p>A 2-week structured mini-project before deciding on equity split. Built-in templates for founder agreements, vesting, and IP clauses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="container">
+    <div class="about-content">
+      <p><strong>Why this exists:</strong> India has 1.4 lakh DPIIT-recognized startups and 55%+ are solo founders. The existing platforms (CoFoundersLab, YC Match, LinkedIn) are either US-centric, passive, or don't understand Indian city/culture dynamics.</p>
+      <p>We're starting with Delhi/NCR because that's where the problem is most concentrated. If it works here, we expand to Bangalore, Mumbai, Pune, Hyderabad.</p>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist" id="waitlist">
+  <div class="container">
+    <h2>Join the Waitlist</h2>
+    <p>We're launching in Delhi/NCR first. Sign up and be among the first 100 founders to get early access — free for the first 3 months.</p>
+    <form class="waitlist-form" id="waitlistForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required placeholder="e.g., Rahul Sharma">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="rahul@example.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="city">Your City</label>
+          <select id="city" required>
+            <option value="">Select city...</option>
+            <option value="delhi">Delhi</option>
+            <option value="gurgaon">Gurgaon</option>
+            <option value="noida">Noida</option>
+            <option value="bangalore">Bangalore</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="pune">Pune</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="profile">You Are</label>
+          <select id="profile" required>
+            <option value="">Select profile...</option>
+            <option value="tech-founder">Tech Founder (I can build)</option>
+            <option value="business-founder">Business Founder (I can sell/operate)</option>
+            <option value="design-founder">Design Founder (I can create)</option>
+            <option value="idea-stage">Just an Idea (Looking for everything)</option>
+            <option value="operator">Operator/Product person</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="looking_for">What kind of co-founder are you looking for?</label>
+        <select id="looking_for" required>
+          <option value="">Select...</option>
+          <option value="tech">Technical co-founder (software/engineering)</option>
+          <option value="business">Business co-founder (sales/marketing/ops)</option>
+          <option value="design">Design co-founder (UI/UX/brand)</option>
+          <option value="operations">Operations co-founder (supply chain/logistics)</option>
+          <option value="fundraising">Fundraising/Finance co-founder</option>
+          <option value="not-sure">Not sure — open to discussing</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="whatsapp">WhatsApp Number (for early access)</label>
+        <input type="tel" id="whatsapp" placeholder="+91 98765 43210">
+      </div>
+      <div class="form-group">
+        <label for="idea">Briefly describe your startup idea or what industry you want to work in</label>
+        <textarea id="idea" placeholder="e.g., B2B SaaS for Indian manufacturers, D2C sustainable fashion, edtech for tier-2 cities..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">🚀 Join Waitlist — Free Early Access</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>Founder Match India — Beta. Delhi/NCR first, India later.</p>
+    <p>Built in New Delhi 🇮🇳</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  status.className = 'form-status';
+  status.style.display = 'none';
+
+  const data = {
+    experiment: 'cofounder',
+    event_type: 'waitlist',
+    source: 'waitlist-page',
+    metadata: JSON.stringify({
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      city: document.getElementById('city').value,
+      profile: document.getElementById('profile').value,
+      looking_for: document.getElementById('looking_for').value,
+      whatsapp: document.getElementById('whatsapp').value,
+      idea: document.getElementById('idea').value ? document.getElementById('idea').value.substring(0,200) : ''
+    })
+  };
+
+  try {
+    // Log to dashboard
+    await fetch('http://localhost:9090/api/event', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+
+    // Also log to Google Sheets via formsubmit.co (free)
+    await fetch('https://formsubmit.co/ajax/your-email@example.com', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: data.metadata.name,
+        email: data.metadata.email,
+        city: data.metadata.city
+      })
+    }).catch(() => {}); // silent fail — dashboard is primary
+
+    status.textContent = '✅ You\'re on the list! We\'ll reach out when we launch in Delhi/NCR. Share this with founder friends!';
+    status.className = 'form-status success';
+    status.style.display = 'block';
+    document.getElementById('waitlistForm').reset();
+  } catch(err) {
+    status.textContent = '❌ Something went wrong. Please try again or DM us.';
+    status.className = 'form-status error';
+    status.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '🚀 Join Waitlist — Free Early Access';
+  }
+});
+</script>
+</body>
+</html>
