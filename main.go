@@ -134,6 +134,9 @@ func seedDefaultExperiments() {
 		{Name: "Hair Care Trio", Slug: "hair-care", Description: "Premium hair care brand validation", Status: "active", URL: ""},
 		{Name: "AI Automation Boutique", Slug: "automation-boutique", Description: "B2B AI workflow automation services", Status: "active", URL: ""},
 		{Name: "Co-founder Platform", Slug: "cofounder", Description: "Entrepreneur partner matching India", Status: "active", URL: ""},
+		{Name: "Stitch Date Planner", Slug: "stitch", Description: "Delhi NCR date planning app — security hardened & SEO live", Status: "active", URL: "https://stitch.thesilkgallery.in"},
+		{Name: "EMS SME Education", Slug: "ems-sme", Description: "Education Management System for Indian SMEs/MSMEs — market analysis done", Status: "idea", URL: ""},
+		{Name: "ServiceNow Freelance", Slug: "servicenow-freelance", Description: "ServiceNow freelancing income path — 15 openings at ₹1.5L+/mo", Status: "active", URL: ""},
 	}
 
 	for _, e := range defaults {
@@ -622,6 +625,9 @@ h1 span { color: var(--accent); }
         <option value="hair-care">Hair Care Trio</option>
         <option value="automation-boutique">AI Automation Boutique</option>
         <option value="cofounder">Co-founder Platform</option>
+        <option value="stitch">Stitch Date Planner</option>
+        <option value="ems-sme">EMS SME Education</option>
+        <option value="servicenow-freelance">ServiceNow Freelance</option>
       </select>
       <select name="event_type" id="eventTypeSelect">
         <option value="pageview">Page View</option>
