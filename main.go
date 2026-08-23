@@ -129,13 +129,7 @@ func initDB() {
 
 func seedDefaultExperiments() {
 	defaults := []Experiment{
-		{Name: "Silk Gallery", Slug: "silk-gallery", Description: "Beauty dupe comparison site", Status: "active", URL: "https://thesilkgallery.in"},
-		{Name: "WhatsApp Commerce OS", Slug: "whatsapp-os", Description: "Shopkeeper order automation", Status: "active", URL: ""},
-		{Name: "Hair Care Trio", Slug: "hair-care", Description: "Premium hair care brand validation", Status: "active", URL: ""},
-		{Name: "AI Automation Boutique", Slug: "automation-boutique", Description: "B2B AI workflow automation services", Status: "active", URL: ""},
-		{Name: "Co-founder Platform", Slug: "cofounder", Description: "Entrepreneur partner matching India", Status: "active", URL: ""},
-		{Name: "Stitch Date Planner", Slug: "stitch", Description: "Delhi NCR date planning app — security hardened & SEO live", Status: "active", URL: "https://stitch.thesilkgallery.in"},
-		{Name: "EMS SME Education", Slug: "ems-sme", Description: "Education Management System for Indian SMEs/MSMEs — market analysis done", Status: "idea", URL: ""},
+		{Name: "Plankro", Slug: "plankro", Description: "Delhi date-planning app — live, GA tracking, SEO enabled", Status: "active", URL: "https://plankro.com"},
 		{Name: "ServiceNow Freelance", Slug: "servicenow-freelance", Description: "ServiceNow freelancing income path — 15 openings at ₹1.5L+/mo", Status: "active", URL: ""},
 	}
 
